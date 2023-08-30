@@ -4,7 +4,7 @@ const phoneHandaler = async (searchText) => {
     const phone = data.data;
     phoneDisplay (phone)
 }
-// phoneHandaler();
+phoneHandaler(12);
 
 
 const phoneDisplay = (phones) => {
@@ -62,11 +62,21 @@ const butonHandaar = async (id) => {
 
 const showPhoned = (phone) => {
 
-    const PhoneName = document.getElementById('Phone-Name').innerText = phone.name; 
+    
     const phoneFeture = document.getElementById ('phone-feture');
+    phoneFeture.innerText = " ";
     const div = document.createElement ('div');
     div.innerHTML = `
-    <img src="${phone.image}" alt="">
+            <h1 class =" text-lg font-bold text-center"> ${phone.name} </h1> 
+    <div class = " flex justify-center" >
+        <img src="${phone.image}" alt="">
+    </div>
+     <div class = "" >
+     <h1 class =" text-base"> <span class =" font-bold">ChipSet:</span> ${phone.mainFeatures.chipSet} </h1> 
+     <h1 class ="">  <span class =" font-bold">Display Size:</span>  ${phone.mainFeatures.displaySize} </h1> 
+     <h1 class =""> <span class =" font-bold"> Memore:</span> ${phone.mainFeatures.memory} </h1> 
+     <h1 class =""> <span class =" font-bold">Storage:</span>  ${phone.mainFeatures.storage} </h1> 
+    </div>
     `
 
     phoneFeture.appendChild(div)
